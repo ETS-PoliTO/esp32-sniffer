@@ -1,0 +1,112 @@
+menu "SPIFFS"
+
+config SPIFFS_BASE_ADDR
+    hex "SPIFFS Base address"
+    range 100000 1FFE000
+    default 180000
+    help
+		Starting address of the SPIFFS area in ESP32 Flash
+
+config SPIFFS_SIZE
+    int "SPIFFS Size in bytes"
+    range 262144 2097152
+    default 1048576
+
+config SPIFFS_LOG_BLOCK_SIZE
+    int "SPIFFS Logical block size"
+    range 4098 65536
+    default 8192
+
+config SPIFFS_LOG_PAGE_SIZE
+    int "SPIFFS Logical page size"
+    range 256 2048
+    default 256
+    help
+		Set it to the phisycal page size og the used SPI Flash chip
+
+endmenu
+
+menu "Configuration"
+
+config ETS
+	string "Main topic"
+	default "ETS"
+	help
+		Name of main topic
+
+config ESP32_ID
+	string "ESP32 ID"
+	default "ESP32-A"
+	help
+		ID of the ESP32. Must be univoque
+
+config ROOM
+	string "Room"
+	default "1"
+	help
+		Room in which ESP32 is situated
+
+config WIFI_SSID
+    string "WiFi SSID"
+    default ""
+    help
+		SSID of WiFi (network name)
+
+config WIFI_PSW
+    string "WiFi password"
+    default ""
+    help
+		WiFi password (WPA or WPA2), can be left blank if the network has no security set
+
+config BROKER_ADDR
+	string "MQTT broker address"
+	default ""
+	help
+		IP of the broker mqtt. Check documentation for more info
+
+config BROKER_PSW
+	string "MQTT broker password"
+	default ""
+	help
+		Password of the MQTT server, can be left blank if the network has no security set
+
+config BROKER_PORT
+	int "MQTT broker port"
+	range 1 65535
+	default 1883
+	help
+		The port of the server MQTT
+
+config CHANNEL
+	int "Sniffing channel"
+	range 1 13
+	default 11
+	help
+		Channel in which ESP32 will sniff PROBE REQUEST
+
+config SNIFFING_TIME
+	int "Time of sniffig in seconds"
+	default 60
+	help
+		Time must be in seconds
+
+config FILENAME1
+	string "File name 1"
+	default "/spiffs/probreq.log"
+	help
+		File name in which to save packet information. The path must be /spiffs/myfile.txt
+
+config FILENAME2
+	string "File name 2"
+	default "/spiffs/probreq2.log"
+	help
+		File name in which to save packet information. The path must be /spiffs/myfile.txt
+        
+config VERBOSE
+    int "Verbose mode"
+    default 0
+    range 0 1
+    help
+        Must be true (1) or false (0): if true more information will be printed
+
+endmenu
