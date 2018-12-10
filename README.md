@@ -8,6 +8,7 @@ From each sniffed packet these informations will be extracted:
 - SSID of the wifi to which the request is sent
 - The timestamp on which the request is sent
 - RSSI
+- Sequence Number
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://bitbucket.org/esp32polito/ets_server/src/master/) and processed.  
