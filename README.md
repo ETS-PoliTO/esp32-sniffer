@@ -160,7 +160,7 @@ You can also add different menu with sever variables:
 - Official [esp-idf](https://github.com/espressif/esp-idf) git repo to see some examples and information about the used data structure.
 - [ESP32-IDF Documentation](http://esp32.info/docs/esp_idf/html/index.html)
 
-Check also this demonstration [video]() to see how ESP32 works.
+Check also this demonstration [video](https://youtu.be/NMywky9Ts_w) to see how ESP32 works.
 
 ###### Seneca
 > Longum iter est per praecepta, breve et efficax per exempla
