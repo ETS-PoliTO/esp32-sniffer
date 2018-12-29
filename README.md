@@ -67,7 +67,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 2. Clone the repo
 	
-		git clone https://J4NN0@bitbucket.org/esp32polito/wifi-sniffer.git
+		git clone https://github.com/ETS-PoliTO/esp32-sniffer.git
 
 3. Establish serial connection between ESP32
 	
