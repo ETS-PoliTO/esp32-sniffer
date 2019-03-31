@@ -11,8 +11,8 @@ From each sniffed packet these informations will be extracted:
 - Sequence Number
 - HT Capabilities Info
 
-After each minute these informations are sent to a [server](https://bitbucket.org/esp32polito/ets_server/src/master/) and processed.  
-Then is possible to see the processed information, like position, time frequency and etc., through a [GUI](https://bitbucket.org/esp32polito/gui/src).
+After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
+Then is possible to see the processed information, like position, time frequency and etc., through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
 # Firmware development
 
