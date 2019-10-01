@@ -12,7 +12,7 @@ From each sniffed packet these informations will be extracted:
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
-Then is possible to see the processed information, like position, time frequency and etc., through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+Then is possible to see the processed informations, like position, time frequency and etc., through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
 # Firmware development
 
@@ -27,7 +27,7 @@ The firmware consits in two main thread:
     - Each minute take the informations saved by the sniffer task and send it to the server
     - A lock is used to manage critical section in I/O operations in the file
 
-The ESP32 is configured in WIFI_MODE_APSTA mode: it create soft-AP and station control block and start soft-AP and station. Thanks to that the ESP32 is able to sniff and sent information to a server at the same time in order to do not lose packets information while sending data to the server.
+The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to that the ESP32 is able to sniff and sent information to a server at the same time in order to do not lose packets information while sending data to the server.
 
 # ESP-IDF environment configuration
 
@@ -60,7 +60,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 # Usage
 	
-1. Make sure you have exported path
+1. Make sure you have exported the path
 	
 		export IDF_PATH=~/esp/esp-idf
 		export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
@@ -69,20 +69,20 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 	
 		git clone https://github.com/ETS-PoliTO/esp32-sniffer.git
 
-3. Establish serial connection between ESP32
+3. Establish serial connection between ESP32 and your PC
 	
 		make menuconfig
 
 	 Go to *Serial flasher config*, then *Default serial port* and set the port in which ESP32 is connected
 	 
-	 Note if you are using a bridge maybe you need some driver:
+	 Note that, if you are using a bridge, probably you need to download some driver:
 	 
 	 - [CP210x](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 	 - [FTDI](https://www.ftdichip.com/Drivers/VCP.htm)
 	 
-	 [This](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/establish-serial-connection.html) provides guidance how to establish serial connection between ESP32 and PC. 
+	 [This](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/establish-serial-connection.html) provides a  guide on how establish serial connection between ESP32 and PC. 
 
-4. Build code and flash ESP32
+4. Build code and flash the ESP32
 
 		make all && make flash
 
@@ -105,7 +105,7 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 	
 	[SPIFFS](https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/storage/spiffs.html) is a file system that supports wear leveling, file system consistency checks and more.
 
-- Configation
+- Configurations
 
 	It contains different values like:
 
@@ -113,24 +113,24 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 	- WIFI_SSID: SSID of WiFi (network name)
 	- WIFI_PASS: WiFi password (WPA or WPA2)
 	- BROKER_ADDR: IP of the MQTT broker
-    - BROKER_PSW: password of the MQTT broker
-    - BROKER_PORT: port of the MQTT broker
-	- CHANNEL: Channel in which ESP32 will sniff PROBE REQUEST
-	- SNIFFING_TIME: Time of sniffing
+	- BROKER_PSW: password of the MQTT broker
+	- BROKER_PORT: port of the MQTT broker
+	- CHANNEL: channel in which ESP32 will sniff PROBE REQUEST
+	- SNIFFING_TIME: time of sniffing
 	- etc...
 
 #### Variables configuration 
 
-To configure the variables mentioned above, open terminal inside the project folder and lunch
+To configure the variables mentioned above, open terminal inside the project folder and run
 	
 		make menuconfig 
 	
 - Select the menu you want to modify
 - Modify the variables as you want
 
-#### Add personal menu
+#### Add customzied menu
 
-You can also add different menu with sever variables:
+You can also add different menus with different variables:
 
 - Open Kconfig.projbuild
 - Start menu with: menu "menu name"
@@ -153,7 +153,7 @@ You can also add different menu with sever variables:
 	
 - MD5
 
-	Hash function used on the packet to get a unique identifier for the packet
+	Hash function used on the packets in order to get a unique identifier for each packet packet
 
 # More
 
