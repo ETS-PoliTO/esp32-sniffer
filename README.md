@@ -1,8 +1,8 @@
 # ESP32
 
-This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for a Wi-Fi connection.
+This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection.
 
-From each sniffed packet these informations will be extracted:
+From each sniffed packet the following informations will be extracted:
 
 - MAC of the smartphone that has sent the request
 - SSID of the wifi to which the request is sent
@@ -12,7 +12,7 @@ From each sniffed packet these informations will be extracted:
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
-Then is possible to see the processed informations, like position, time frequency and etc., through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+Then is possible to see the processed informations (position of the smartphones, time frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
 # Firmware development
 
@@ -164,3 +164,5 @@ Check also this demonstration [video](https://youtu.be/NMywky9Ts_w) to see how E
 
 ###### Seneca
 > Longum iter est per praecepta, breve et efficax per exempla
+
+[![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
