@@ -1,5 +1,8 @@
 # ESP32
 
+[![Documentation Status](https://readthedocs.com/projects/espressif-esp-idf/badge/?version=latest)](https://docs.espressif.com/projects/esp-idf/en/latest/?badge=latest) [![HitCount](http://hits.dwyl.io/J4NN0/https://githubcom/ETS-PoliTO/esp32-sniffer.svg)](http://hits.dwyl.io/J4NN0/https://githubcom/ETS-PoliTO/esp32-sniffer)
+[![Twitter Follow](https://img.shields.io/twitter/follow/giannofederico.svg?style=social&label=Follow)](https://twitter.com/giannofederico)
+
 This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection.
 
 From each sniffed packet the following informations will be extracted:
@@ -13,6 +16,14 @@ From each sniffed packet the following informations will be extracted:
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
 Then is possible to see the processed informations (position of the smartphones, time frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+
+# Table of Contents
+- [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-development)
+- [ESP-IDF environment configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
+- [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
+- [File Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#file-configuration)
+- [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
+- [More](https://github.com/ETS-PoliTO/esp32-sniffer#more)
 
 # Firmware development
 
