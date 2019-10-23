@@ -1,4 +1,4 @@
-# About
+# ESP32 sniffer
 
 [![Documentation Status](https://readthedocs.com/projects/espressif-esp-idf/badge/?version=latest)](https://docs.espressif.com/projects/esp-idf/en/latest/?badge=latest) [![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 [![Twitter Follow](https://img.shields.io/twitter/follow/giannofederico.svg?style=social&label=Follow)](https://twitter.com/giannofederico)
