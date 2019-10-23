@@ -9,7 +9,7 @@ From each sniffed packet the following informations will be extracted:
 
 - MAC of the smartphone that has sent the request
 - SSID of the wifi to which the request is sent
-- The timestamp on which the request is sent
+- The timestamp when the request is sent
 - RSSI
 - Sequence Number
 - HT Capabilities Info
