@@ -17,6 +17,9 @@ From each sniffed packet the following informations will be extracted:
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
 Then is possible to see the processed informations (position of the smartphones, time frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
+
+[![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
+
 # Table of Contents
 - [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-development)
 - [ESP-IDF environment configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
@@ -175,5 +178,3 @@ Check also this demonstration [video](https://youtu.be/NMywky9Ts_w) to see how E
 
 ###### Seneca
 > Longum iter est per praecepta, breve et efficax per exempla
-
-[![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
