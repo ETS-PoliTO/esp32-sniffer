@@ -5,9 +5,10 @@
 
 This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module.
 
-This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection.
+This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on the smartphone, it will send in broadcast (in all channels) a probe request messagge asking if there is some free Wi-Fi or some known one (i.e. the smartphone knows the password for that Wi-Fi). 
+The ESP will sniff it and extract different types of informations.
 
-From each sniffed packet the following informations will be extracted:
+From each sniffed packet the following informations is taken:
 
 - MAC of the smartphone that has sent the request
 - SSID of the wifi to which the request is sent
@@ -17,7 +18,7 @@ From each sniffed packet the following informations will be extracted:
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
-Then is possible to see the processed informations (position of the smartphones, time frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+Then is possible to see the processed informations (real time location of the smartphones, smartphone frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
 
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
