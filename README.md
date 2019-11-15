@@ -3,6 +3,8 @@
 [![Documentation Status](https://readthedocs.com/projects/espressif-esp-idf/badge/?version=latest)](https://docs.espressif.com/projects/esp-idf/en/latest/?badge=latest) [![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 [![Twitter Follow](https://img.shields.io/twitter/follow/giannofederico.svg?style=social&label=Follow)](https://twitter.com/giannofederico)
 
+This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module.
+
 This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection.
 
 From each sniffed packet the following informations will be extracted:
