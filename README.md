@@ -147,10 +147,10 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 
 To configure the variables mentioned above, open terminal inside the project folder and run
 	
-		make menuconfig 
+	make menuconfig 
 	
 - Select the menu you want to modify
-- Modify the variables as you want
+- Edit variables as you like
 
 #### Add customzied menu
 
@@ -179,10 +179,12 @@ You can also add different menus with different variables:
 
 	Hash function used on the packets in order to get a unique identifier for each packet packet
 
-# More
+# Resources
 
-- Official [esp-idf](https://github.com/espressif/esp-idf) git repo to see some examples and information about the used data structure.
-- [ESP32-IDF Documentation](http://esp32.info/docs/esp_idf/html/index.html)
+- Official [esp-idf git repo](https://github.com/espressif/esp-idf) to see some examples and information about the used data structure.
+- Latest Documentation version for [Espressif IoT Development Framework](https://docs.espressif.com/projects/esp-idf/en/latest/).
+- [ESP32 forum](https://esp32.com/) to ask questions and find community resources.
+- [ESP32-IDF Documentation](http://esp32.info/docs/esp_idf/html/index.html) for browseable modules, namespaces, data structures and files.
 
 Check also this demonstration [video](https://youtu.be/NMywky9Ts_w) to see how ESP32 works.
 
