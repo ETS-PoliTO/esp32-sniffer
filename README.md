@@ -114,7 +114,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 		make monitor
 
-# File configuration
+# Configuration file
 
 File */main/Kconfig.projbuild* contains two differnt menu:
 
@@ -131,7 +131,7 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 
 - Configurations
 
-	It contains different values like:
+	It contains different variables like:
 
 	- ESP32_ID: ID of the ESP32
 	- WIFI_SSID: SSID of WiFi (network name)
@@ -143,23 +143,23 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 	- SNIFFING_TIME: time of sniffing
 	- etc...
 
-#### Variables configuration 
+#### Configuration of variables 
 
-To configure the variables mentioned above, open terminal inside the project folder and run
+In order to configure the variables mentioned above, open terminal inside the project folder and run
 	
 	make menuconfig 
 	
-- Select the menu you want to modify
-- Edit variables as you like
+1. Select the menu you want to modify
+2. Edit variables as you like
 
 #### Add customzied menu
 
 You can also add different menus with different variables:
 
-- Open Kconfig.projbuild
-- Start menu with: menu "menu name"
-- Add the variables you need
-- End menu with: endmenu
+1. Open Kconfig.projbuild
+2. Start menu with: menu "menu name"
+3. Add the variables you need
+4. End menu with: endmenu
 
 # Components
 
