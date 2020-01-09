@@ -34,9 +34,9 @@ Then is possible to see the processed informations (real time location of the sm
 - [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-development)
 - [ESP-IDF environment configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
 - [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
-- [File Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#file-configuration)
+- [Configuration file](https://github.com/ETS-PoliTO/esp32-sniffer#configuration-file)
 - [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
-- [More](https://github.com/ETS-PoliTO/esp32-sniffer#more)
+- [Resources](https://github.com/ETS-PoliTO/esp32-sniffer#resources)
 
 # Firmware development
 
