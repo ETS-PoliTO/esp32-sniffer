@@ -31,14 +31,14 @@ Then is possible to see the processed informations (real time location of the sm
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
 
 # Table of Contents
-- [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-development)
+- [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-overview)
 - [ESP-IDF environment configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
 - [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
 - [Configuration file](https://github.com/ETS-PoliTO/esp32-sniffer#configuration-file)
 - [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
 - [Resources](https://github.com/ETS-PoliTO/esp32-sniffer#resources)
 
-# Firmware development
+# Firmware Overview
 
 The firmware consits in two main thread:
 
