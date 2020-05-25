@@ -12,7 +12,7 @@
 
 This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module.
 
-This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on the smartphone, it will send in broadcast (in all channels) a probe request messagge asking if there is some free Wi-Fi or some known one (i.e. the smartphone knows the password for that Wi-Fi). 
+This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on the smartphone, it will send in broadcast (in all channels frequencies) a probe request messagge asking if there is some free Wi-Fi or some known ones (i.e. the smartphone knows the password for that Wi-Fi). 
 The ESP will sniff it and extract different types of informations.
 
 From each sniffed packet the following informations is taken:
@@ -25,9 +25,9 @@ From each sniffed packet the following informations is taken:
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
-Then is possible to see the processed informations (real time location of the smartphones, smartphone frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+Finally, it is possible to see the processed informations (real time location of the smartphones, smartphone frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
-
+### Demo 
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
 
 # Table of Contents
@@ -40,18 +40,18 @@ Then is possible to see the processed informations (real time location of the sm
 
 # Firmware Overview
 
-The firmware consits in two main thread:
+The firmware consits in two main threads:
 
 - Sniffer task
     
-    - Sniff PROBE REQUEST and save the infomations described above into a file
+    - Sniff PROBE REQUEST packet and save the infomations described above into a file
 
 - Wi-Fi task
 
-    - Each minute take the informations saved by the sniffer task and send it to the server
-    - A lock is used to manage critical section in I/O operations in the file
+    - Each minute take the informations saved by the **sniffer task** and send it to the server
+    - A lock is used in order to manage critical section for I/O operations in the file
 
-The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to that the ESP32 is able to sniff and sent information to a server at the same time in order to do not lose packets information while sending data to the server.
+The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoid losing packets information while sending data.
 
 # ESP-IDF environment configuration
 
