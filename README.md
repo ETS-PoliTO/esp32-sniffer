@@ -97,7 +97,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 	
 		make menuconfig
 
-	 Go to *Serial flasher config*, then *Default serial port* and set the port in which ESP32 is connected
+	 Go to `Serial flasher config`, then `Default serial port` and set the port in which ESP32 is connected
 	 
 	 Note that, if you are using a bridge, probably you need to download some driver:
 	 
@@ -116,7 +116,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 # Configuration file
 
-File */main/Kconfig.projbuild* contains two differnt menu:
+File `/main/Kconfig.projbuild` contains two differnt menu:
 
 - SPIFFS (SPI Flash File System)
 
@@ -131,7 +131,7 @@ File */main/Kconfig.projbuild* contains two differnt menu:
 
 - Configurations
 
-	It contains different variables like:
+	It contains different variables, e.g:
 
 	- ESP32_ID: ID of the ESP32
 	- WIFI_SSID: SSID of WiFi (network name)
@@ -157,9 +157,9 @@ In order to configure the variables mentioned above, open terminal inside the pr
 You can also add different menus with different variables:
 
 1. Open Kconfig.projbuild
-2. Start menu with: menu "menu name"
+2. Start menu with: *menu "menu name"*
 3. Add the variables you need
-4. End menu with: endmenu
+4. End menu with: *endmenu*
 
 # Components
 
