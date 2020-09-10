@@ -3,7 +3,7 @@
 <p align="center">
   <img alt="ETS" src="https://user-images.githubusercontent.com/25306548/70620809-7a028600-1c18-11ea-939c-5358bb2c61f7.png" height="140" />
   <p align="center">
-    <a href="https://docs.espressif.com/projects/esp-idf/en/latest/?badge=latest"><img src="https://readthedocs.com/projects/espressif-esp-idf/badge/?version=latest"></a>
+    <a href="https://docs.espressif.com/projects/esp-idf/en/stable/get-started/"><img src="https://readthedocs.com/projects/espressif-esp-idf/badge/?version=stable"></a>
     <a href=""><img alt="Software License" src="https://img.shields.io/cran/l/devtools"></a>
     <a href="https://youtu.be/NMywky9Ts_w"><img alt="Demo" src="https://img.shields.io/badge/demo-youtube-blue.svg"></a>
     <a href="https://twitter.com/giannofederico"><img alt="Twitter" src="https://img.shields.io/twitter/follow/giannofederico.svg?style=social&label=Follow"></a>
