@@ -69,7 +69,7 @@ The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and stat
 	   cd ~/esp
 	   git clone --recursive https://github.com/espressif/esp-idf.git
 		
-3. Use to version `v3.x`
+3. Use version `v3.x`
 
 	   cd esp-idf
 	   git checkout release/v3.2
