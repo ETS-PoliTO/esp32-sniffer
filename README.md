@@ -3,14 +3,13 @@
 <p align="center">
   <img alt="ETS" src="https://user-images.githubusercontent.com/25306548/70620809-7a028600-1c18-11ea-939c-5358bb2c61f7.png" height="140" />
   <p align="center">
-    <a href="https://docs.espressif.com/projects/esp-idf/en/stable/get-started/"><img src="https://readthedocs.com/projects/espressif-esp-idf/badge/?version=stable"></a>
     <a href=""><img alt="Software License" src="https://img.shields.io/cran/l/devtools"></a>
     <a href="https://youtu.be/NMywky9Ts_w"><img alt="Demo" src="https://img.shields.io/badge/demo-youtube-blue.svg"></a>
     <a href="https://twitter.com/giannofederico"><img alt="Twitter" src="https://img.shields.io/twitter/follow/giannofederico.svg?style=social&label=Follow"></a>
   </p>
 </p>
 
-This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module.
+This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module with esp-idf v3.2.
 
 An overview of the full project can be found [here](https://j4nn0.github.io/doc/ets_presentation.pdf).
 
@@ -53,7 +52,7 @@ The firmware consits in two main threads:
     - Each minute take the informations saved by the **sniffer task** and send it to the server
     - A lock is used in order to manage critical section for I/O operations in the file
 
-The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoid losing packets information while sending data.
+The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoid losing packets information while sending data.
 
 # ESP-IDF environment configuration
 
@@ -63,14 +62,19 @@ The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and statio
 	- [Linux](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.html)
 	- [Mac OS](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/macos-setup.html)
 	
-2.  Get ESP-IDF
+2. Get ESP-IDF
 
 	Besides the toolchain (that contains programs to compile and build the application), you also need ESP32 specific API / libraries.
 
-		cd ~/esp
-		git clone --recursive https://github.com/espressif/esp-idf.git
+	   cd ~/esp
+	   git clone --recursive https://github.com/espressif/esp-idf.git
 		
-3. Setup Path to ESP-IDF
+3. Use to version `v3.x`
+
+	   cd esp-idf
+	   git checkout release/v3.2
+		
+4. Setup Path to ESP-IDF
 
 	The toolchain programs access ESP-IDF using IDF_PATH environment variable.
 	This variable should be set up on your PC, otherwise projects will not build.
@@ -78,9 +82,9 @@ The ESP32 is configured in WIFI_MODE_APSTA mode: it creates *"soft-AP and statio
 	- [Windows](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/add-idf_path-to-profile.html#add-idf-path-to-profile-windows)
 	- [Linux & Mac OS](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/add-idf_path-to-profile.html#add-idf-path-to-profile-linux-macos)
 	
-4. Install the Required Python Packages
+5. Install the Required Python Packages
 
-		python -m pip install --user -r $IDF_PATH/requirements.txt
+	   python -m pip install --user -r $IDF_PATH/requirements.txt
 
 Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/index.html) for more info.
 
@@ -88,16 +92,16 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 	
 1. Make sure you have exported the path
 	
-		export IDF_PATH=~/esp/esp-idf
-		export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
+	   export IDF_PATH=~/esp/esp-idf
+	   export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
 
 2. Clone the repo
 	
-		git clone https://github.com/ETS-PoliTO/esp32-sniffer.git
+	   git clone https://github.com/ETS-PoliTO/esp32-sniffer.git
 
 3. Establish serial connection between ESP32 and your PC
 	
-		make menuconfig
+	   make menuconfig
 
 	 Go to `Serial flasher config`, then `Default serial port` and set the port in which ESP32 is connected
 	 
@@ -110,11 +114,11 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 4. Build code and flash the ESP32
 
-		make all && make flash
+	   make all && make flash
 
 5. See logs
 
-		make monitor
+	   make monitor
 
 # Configuration file
 
@@ -133,7 +137,7 @@ File `/main/Kconfig.projbuild` contains two differnt menu:
 
 - Configurations
 
-	It contains different variables, e.g:
+	It contains different variables, e.g.:
 
 	- ESP32_ID: ID of the ESP32
 	- WIFI_SSID: SSID of WiFi (network name)
@@ -149,7 +153,7 @@ File `/main/Kconfig.projbuild` contains two differnt menu:
 
 In order to configure the variables mentioned above, open terminal inside the project folder and run
 	
-	make menuconfig 
+    make menuconfig 
 	
 1. Select the menu you want to modify
 2. Edit variables as you like
@@ -158,10 +162,10 @@ In order to configure the variables mentioned above, open terminal inside the pr
 
 You can also add different menus with different variables:
 
-1. Open Kconfig.projbuild
-2. Start menu with: *menu "menu name"*
-3. Add the variables you need
-4. End menu with: *endmenu*
+1. Open `Kconfig.projbuild`.
+2. Start menu with: *menu "menu name"*.
+3. Add the variables you need.
+4. End menu with: *endmenu*.
 
 # Components
 
