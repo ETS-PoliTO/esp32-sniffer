@@ -32,10 +32,10 @@ Finally, it is possible to see the processed informations (real time location of
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
 
 # Table of Contents
-- [Firmware development](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-overview)
-- [ESP-IDF environment configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
+- [Firmware Overview](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-overview)
+- [ESP-IDF Environment Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
 - [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
-- [Configuration file](https://github.com/ETS-PoliTO/esp32-sniffer#configuration-file)
+- [File Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#file-configuration)
 - [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
 - [Resources](https://github.com/ETS-PoliTO/esp32-sniffer#resources)
 
@@ -54,7 +54,7 @@ The firmware consits in two main threads:
 
 The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoid losing packets information while sending data.
 
-# ESP-IDF environment configuration
+# ESP-IDF Environment Configuration
 
 1. Setup Toolchain
 
@@ -120,9 +120,9 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 	   make monitor
 
-# Configuration file
+# File Configuration
 
-File `/main/Kconfig.projbuild` contains two differnt menu:
+The file `/main/Kconfig.projbuild` contains two differnt menu:
 
 - SPIFFS (SPI Flash File System)
 
