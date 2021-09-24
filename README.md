@@ -9,20 +9,20 @@
   </p>
 </p>
 
-This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module with esp-idf v3.2.
+This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module and esp-idf `v3.2`.
 
 An overview of the full project can be found [here](https://j4nn0.github.io/doc/ets_presentation.pdf).
 
 This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on the smartphone, it will send in broadcast (in all channels frequencies) a probe request messagge asking if there is some free Wi-Fi or some known ones (i.e. the smartphone knows the password for that Wi-Fi). 
 The ESP will sniff it and extract different types of informations.
 
-From each sniffed packet the following informations is taken:
+From each sniffed packet the following informations are taken:
 
 - MAC of the smartphone that has sent the request
 - SSID of the wifi to which the request is sent
-- The timestamp when the request is sent
-- RSSI
-- Sequence Number
+- The Timestamp of when the request was sent
+- Received Signal Strength Indicator (RSSI)
+- Sequence Number (SN)
 - HT Capabilities Info
 
 After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
@@ -56,6 +56,8 @@ The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and stat
 
 # ESP-IDF Environment Configuration
 
+This section might be outdated, checkout the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/index.html) for more info and for the latest guide on how to setup the toolchain.
+
 1. Setup Toolchain
 
 	- [Windows](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/windows-setup.html)
@@ -76,7 +78,7 @@ The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and stat
 		
 4. Setup Path to ESP-IDF
 
-	The toolchain programs access ESP-IDF using IDF_PATH environment variable.
+	The toolchain programs access ESP-IDF using `IDF_PATH` environment variable.
 	This variable should be set up on your PC, otherwise projects will not build.
 	
 	- [Windows](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/add-idf_path-to-profile.html#add-idf-path-to-profile-windows)
@@ -85,8 +87,6 @@ The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and stat
 5. Install the Required Python Packages
 
 	   python -m pip install --user -r $IDF_PATH/requirements.txt
-
-Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/index.html) for more info.
 
 # Usage
 	
@@ -122,7 +122,7 @@ Check the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/i
 
 # File Configuration
 
-The file `/main/Kconfig.projbuild` contains two differnt menu:
+The file `/main/Kconfig.projbuild` contains two different menu:
 
 - SPIFFS (SPI Flash File System)
 
@@ -139,26 +139,26 @@ The file `/main/Kconfig.projbuild` contains two differnt menu:
 
 	It contains different variables, e.g.:
 
-	- ESP32_ID: ID of the ESP32
-	- WIFI_SSID: SSID of WiFi (network name)
-	- WIFI_PASS: WiFi password (WPA or WPA2)
-	- BROKER_ADDR: IP of the MQTT broker
-	- BROKER_PSW: password of the MQTT broker
-	- BROKER_PORT: port of the MQTT broker
-	- CHANNEL: channel in which ESP32 will sniff PROBE REQUEST
-	- SNIFFING_TIME: time of sniffing
+	- `ESP32_ID`: ID of the ESP32
+	- `WIFI_SSID`: SSID of WiFi (network name)
+	- `WIFI_PASS`: WiFi password (WPA or WPA2)
+	- `BROKER_ADDR`: IP of the MQTT broker
+	- `BROKER_PSW`: password of the MQTT broker
+	- `BROKER_PORT`: port of the MQTT broker
+	- `CHANNEL`: channel in which ESP32 will sniff PROBE REQUEST
+	- `SNIFFING_TIME`: time of sniffing
 	- etc...
 
-#### Configuration of variables 
+### Variables configuration
 
-In order to configure the variables mentioned above, open terminal inside the project folder and run
+In order to configure the variables mentioned above, open your terminal within the project folder and run:
 	
     make menuconfig 
 	
 1. Select the menu you want to modify
 2. Edit variables as you like
 
-#### Add customzied menu
+### Add customised Menu
 
 You can also add different menus with different variables:
 
