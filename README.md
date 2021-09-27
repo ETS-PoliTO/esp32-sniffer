@@ -11,12 +11,11 @@
 
 This project is using [Espressif IoT Development Framework](https://github.com/espressif/esp-idf) (ESP-IDF) and has been tested on ESP-WROOM-32 module and esp-idf `v3.2`.
 
-An overview of the full project can be found [here](https://j4nn0.github.io/doc/ets_presentation.pdf).
+An overview of the full project (i.e. ESP32 firmware, server and GUI) can be found [here](https://j4nn0.github.io/doc/ets_presentation.pdf).
 
-This firmware is written with the purpose to sniff probe request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on the smartphone, it will send in broadcast (in all channels frequencies) a probe request messagge asking if there is some free Wi-Fi or some known ones (i.e. the smartphone knows the password for that Wi-Fi). 
-The ESP will sniff it and extract different types of informations.
+This firmware is written with the purpose to sniff Probe Request packets sent by smartphones that are looking for Wi-Fi connection. When the Wi-Fi connection is active on a smartphone, it will send in broadcast (in all channels frequencies) a probe request messagge asking if there are any free Wi-Fi or some known ones (i.e. the smartphone knows the password for that Wi-Fi). The ESP32 will sniff it and extract different types of information.
 
-From each sniffed packet the following informations are taken:
+The following information is taken from each sniffed packet:
 
 - MAC of the smartphone that has sent the request
 - SSID of the wifi to which the request is sent
@@ -25,8 +24,7 @@ From each sniffed packet the following informations are taken:
 - Sequence Number (SN)
 - HT Capabilities Info
 
-After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed.  
-Finally, it is possible to see the processed informations (real time location of the smartphones, smartphone frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
+After each minute these informations are sent to a [server](https://github.com/ETS-PoliTO/ETS-Server) and processed. Finally, it is possible to see the processed informations (smartphones real time location, smartphone frequency, etc.) through a [GUI](https://github.com/ETS-PoliTO/GUI-Application).
 
 ### Demo 
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
@@ -41,22 +39,30 @@ Finally, it is possible to see the processed informations (real time location of
 
 # Firmware Overview
 
-The firmware consits in two main threads:
+The firmware consits in two main threads/tasks:
 
-- Sniffer task
+- Sniffer Task
     
-    - Sniff PROBE REQUEST packet and save the infomations described above into a file
+    - Sniff Probe Request packet and save infomation described above into a file.
 
-- Wi-Fi task
+- Wi-Fi Task
 
-    - Each minute take the informations saved by the **sniffer task** and send it to the server
-    - A lock is used in order to manage critical section for I/O operations in the file
+    - Each minute, take the information saved by the **Sniffer Task** and send it to the server.
+    - A `lock` is used in order to manage critical section for I/O operations in the file.
 
-The ESP32 is configured in `WIFI_MODE_APSTA` mode: it creates *"soft-AP and station control block"* and start *"soft-AP and station"*. Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoid losing packets information while sending data.
+The ESP32 is configured in `WIFI_MODE_APSTA` mode: i.e. it creates "*soft-AP and station control block*" and starts "*soft-AP and station*". Thanks to this, the ESP32 is able to sniff and send informations to the server at the same time avoiding to lose packets information while sending data.
+
+Here is the full list of information fields that can be in a Probe Request (source IEEE 802.11-2012):
+
+![cwap-probe-10](https://user-images.githubusercontent.com/25306548/134971992-9df8ba5c-b93c-4d83-b12f-0f991b4ddbeb.png)
+
+And here below a packet sniffed with Wireshark in which you can see, for each field, the number of bits and their position within the packet:
+
+![cwap-probe-03](https://user-images.githubusercontent.com/25306548/134974167-d0b1aaf1-dfc9-46ee-9513-271c3b876716.png)
 
 # ESP-IDF Environment Configuration
 
-This section might be outdated, checkout the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/index.html) for more info and for the latest guide on how to setup the toolchain.
+This section might be outdated, checkout the [official site](https://esp-idf.readthedocs.io/en/latest/get-started/index.html) for more info and for the latest guide on how to get started with ESP-IDF.
 
 1. Setup Toolchain
 
@@ -71,12 +77,12 @@ This section might be outdated, checkout the [official site](https://esp-idf.rea
 	   cd ~/esp
 	   git clone --recursive https://github.com/espressif/esp-idf.git
 		
-3. Use version `v3.x`
+3. Checkout to version `v3.x`
 
 	   cd esp-idf
 	   git checkout release/v3.2
 		
-4. Setup Path to ESP-IDF
+4. Setup path to ESP-IDF
 
 	The toolchain programs access ESP-IDF using `IDF_PATH` environment variable.
 	This variable should be set up on your PC, otherwise projects will not build.
@@ -163,7 +169,7 @@ In order to configure the variables mentioned above, open your terminal within t
 You can also add different menus with different variables:
 
 1. Open `Kconfig.projbuild`.
-2. Start menu with: *menu "menu name"*.
+2. Start menu with: *menu <$yourMenuName>*.
 3. Add the variables you need.
 4. End menu with: *endmenu*.
 
@@ -171,19 +177,19 @@ You can also add different menus with different variables:
 
 - SPIFFS
 
-	You need to create a [partition table](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/partition-tables.html)
+	You need to create a [partition table](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/partition-tables.html).
 	
 	[SPIFFS components](https://github.com/espressif/esp-idf/tree/master/components/spiffs)
 
 - ESP32 MQTT
 
-	Has been used ESP32 MQTT Library
+	Has been used ESP32 MQTT Library.
 	
 	[MQTT documentation](https://github.com/espressif/esp-mqtt/tree/c5ff6dd05fd357803f419916aa98ad7dd0f8e535)
 	
 - MD5
 
-	Hash function used on the packets in order to get a unique identifier for each packet packet
+	Hash function used on the packets in order to get a unique identifier for each packet packet.
 
 # Resources
 
