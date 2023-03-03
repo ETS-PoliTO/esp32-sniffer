@@ -1,4 +1,4 @@
-# ESP32 sniffer
+# ESP32 Sniffer
 
 <p align="center">
   <img alt="ETS" src="https://user-images.githubusercontent.com/25306548/70620809-7a028600-1c18-11ea-939c-5358bb2c61f7.png" height="140" />
@@ -106,6 +106,7 @@ This section might be outdated, checkout the [official site](https://esp-idf.rea
 2. Clone the repo
 	
 	   git clone https://github.com/ETS-PoliTO/esp32-sniffer.git
+	   cd esp32-sniffer
 
 3. Establish serial connection between ESP32 and your PC
 	
@@ -175,7 +176,7 @@ You can also add different menus with different variables:
 1. Open `Kconfig.projbuild`
 2. Start a new menu
 
-       menu $yourMenuName
+       menu YOUR_MENU_NAME
      
 3. Add the variables you need
 4. End menu
