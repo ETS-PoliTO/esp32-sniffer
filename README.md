@@ -34,6 +34,8 @@ After each minute these informations are sent to a [server](https://github.com/E
 - [ESP-IDF Environment Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
 - [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
 - [File Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#file-configuration)
+    - [Variables Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#variables-configuration)
+    - [Add Customised Menu](https://github.com/ETS-PoliTO/esp32-sniffer#add-customised-menu)
 - [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
 - [Resources](https://github.com/ETS-PoliTO/esp32-sniffer#resources)
 
@@ -128,7 +130,7 @@ This section might be outdated, checkout the [official site](https://esp-idf.rea
 
 # File Configuration
 
-The file `/main/Kconfig.projbuild` contains two different menu:
+The file `/main/Kconfig.projbuild` contains two different menus:
 
 - SPIFFS (SPI Flash File System)
 
@@ -143,7 +145,7 @@ The file `/main/Kconfig.projbuild` contains two different menu:
 
 - Configurations
 
-	It contains different variables, e.g.:
+	It contains different variables:
 
 	- `ESP32_ID`: ID of the ESP32
 	- `WIFI_SSID`: SSID of WiFi (network name)
@@ -155,23 +157,30 @@ The file `/main/Kconfig.projbuild` contains two different menu:
 	- `SNIFFING_TIME`: time of sniffing
 	- etc...
 
-### Variables configuration
+### Variables Configuration
 
-In order to configure the variables mentioned above, open your terminal within the project folder and run:
-	
-    make menuconfig 
-	
-1. Select the menu you want to modify
-2. Edit variables as you like
+In order to configure the variables above:
 
-### Add customised Menu
+1. Open your terminal within the project folder and run
+	
+       make menuconfig 
+	
+2. Select the menu you want to modify
+3. Edit variables as you like
+
+### Add Customised Menu
 
 You can also add different menus with different variables:
 
-1. Open `Kconfig.projbuild`.
-2. Start menu with: *menu <$yourMenuName>*.
-3. Add the variables you need.
-4. End menu with: *endmenu*.
+1. Open `Kconfig.projbuild`
+2. Start a new menu
+
+       menu $yourMenuName
+     
+3. Add the variables you need
+4. End menu
+
+       endmenu
 
 # Components
 
@@ -183,13 +192,13 @@ You can also add different menus with different variables:
 
 - ESP32 MQTT
 
-	Has been used ESP32 MQTT Library.
+	It has been used ESP32 MQTT Library.
 	
 	[MQTT documentation](https://github.com/espressif/esp-mqtt/tree/c5ff6dd05fd357803f419916aa98ad7dd0f8e535)
 	
 - MD5
 
-	Hash function used on the packets in order to get a unique identifier for each packet packet.
+	Hash function used on sniffed packets in order to get a unique identifier.
 
 # Resources
 
