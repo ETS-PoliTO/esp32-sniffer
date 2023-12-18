@@ -30,14 +30,14 @@ After each minute these informations are sent to a [server](https://github.com/E
 [![Watch the video](https://img.youtube.com/vi/NMywky9Ts_w/maxresdefault.jpg)](https://youtu.be/NMywky9Ts_w)
 
 # Table of Contents
-- [Firmware Overview](https://github.com/ETS-PoliTO/esp32-sniffer#firmware-overview)
-- [ESP-IDF Environment Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#esp-idf-environment-configuration)
-- [Usage](https://github.com/ETS-PoliTO/esp32-sniffer#usage)
-- [File Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#file-configuration)
-    - [Variables Configuration](https://github.com/ETS-PoliTO/esp32-sniffer#variables-configuration)
-    - [Add Customised Menu](https://github.com/ETS-PoliTO/esp32-sniffer#add-customised-menu)
-- [Components](https://github.com/ETS-PoliTO/esp32-sniffer#components)
-- [Resources](https://github.com/ETS-PoliTO/esp32-sniffer#resources)
+- [Firmware Overview](#firmware-overview)
+- [ESP-IDF Environment Configuration](#esp-idf-environment-configuration)
+- [Usage](#usage)
+- [File Configuration](#file-configuration)
+    - [Variables Configuration](#variables-configuration)
+    - [Add Customised Menu](#add-customised-menu)
+- [Components](#components)
+- [Resources](#resources)
 
 # Firmware Overview
 
